@@ -4,6 +4,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+Amadeus amadeus = Amadeus
+        .builder("FRGt1GzljciurbN7CZRixQuKv8KQ3OWR", "iezhRB9VDmz38pQv")
+        .build();
 
 var app = builder.Build();
 
@@ -18,9 +21,6 @@ if (!app.Environment.IsDevelopment())
 }
 
 
-Amadeus amadeus = Amadeus
-        .builder("FRGt1GzljciurbN7CZRixQuKv8KQ3OWR", "iezhRB9VDmz38pQv")
-        .build();
 
 
 app.UseHttpsRedirection();

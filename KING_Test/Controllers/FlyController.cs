@@ -15,13 +15,17 @@ namespace KING_Test.Controllers
         public IActionResult Index()
         {
             var webClient = new WebClient();
-            var json = webClient.DownloadString(@"E:\.Net\KING_Test\KING_Test\wwwroot\lib\AmadeusFlyInfo.json");
-            var countries = JsonConvert.DeserializeObject<Data>(json);
 
-            return View(countries);
+            // Location of Json file in wwwroot - lib - AmadeusFlyInfo
+            var json = webClient.DownloadString(@"E:\.Net\KING_Test\KING_Test\wwwroot\lib\AmadeusFlyInfo.json");
+            var flights = JsonConvert.DeserializeObject<Data>(json);
+
+            return View(flights);
         }
 
 
+        /*
+       
         public IActionResult LiveTest()
         {
             Amadeus amadeus = Amadeus
@@ -36,5 +40,7 @@ namespace KING_Test.Controllers
             
             return View(locations);
         }
+        
+         */
     }
 }
