@@ -1,0 +1,77 @@
+﻿@model KING_Test.Models.Data
+
+
+@*
+<form method="get" asp-action="Index">
+    <p>
+        <input type="search" placeholder="Enter text" value="@ViewData["GetFlyData"]" name="Empsearch" style="width:500px" />
+        <input type="submit" value="Search" class="btn btn-primary" />
+        <a asp-action="Index">Get All Fly</a>
+    </p>
+</form>
+*@
+<table class="table table-bordered table-striped table-dark">
+    <thead>
+        <tr>
+            <th>
+                Departure airport
+            </th>
+            <th>
+                Arrival airport
+            </th>
+            <th>
+                Departure date
+            </th>
+            <th>
+                Date of arrival
+            </th>
+            <th>
+                Number of transfers
+            </th>
+            <th>
+                Number of available seats
+            </th>
+            <th>
+                Value
+            </th>
+            <th>
+                Total price
+            </th>
+        </tr>
+    </thead>
+
+        @foreach(var item in Model.data)
+        {
+           <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.itineraries[0].segments[0].departure.iataCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.itineraries[0].segments[0].arrival.iataCode)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.itineraries[0].segments[0].departure.at)
+                </td> 
+                 <td>
+                    @Html.DisplayFor(modelItem => item.itineraries[0].segments[0].arrival.at)
+                </td> 
+                <td>
+                    @Html.DisplayFor(modelItem => item.itineraries[0].segments[0].numberOfStops)
+                </td> 
+                <td>
+                    @Html.DisplayFor(modelItem => item.travelerPricings[0].fareDetailsBySegment[0].segmentId)
+                </td> 
+                <td>
+                    @Html.DisplayFor(modelItem => item.price.currency)
+                </td> 
+                <td>
+                    @Html.DisplayFor(modelItem => item.price.total)
+                </td>
+
+
+            </tr>
+        }
+   
+        
+    
+</table>
