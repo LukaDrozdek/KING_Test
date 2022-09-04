@@ -3,5 +3,6 @@
     public class Data
     {
         public IList<FlyingData> data { get; set; }
+
     }
 }
