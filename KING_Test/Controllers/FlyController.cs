@@ -24,8 +24,8 @@ namespace KING_Test.Controllers
         }
 
 
-        /*
-       
+
+
         public IActionResult LiveTest()
         {
             Amadeus amadeus = Amadeus
@@ -37,10 +37,10 @@ namespace KING_Test.Controllers
                     .and("subType", resources.referenceData.Locations.ANY));
 
 
-            
-            return View(locations);
+
+            return View();
         }
-        
-         */
+
+
     }
 }
